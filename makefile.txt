@@ -1,0 +1,14 @@
+ListEditor: driver.o LinkedList.o node.o
+	g++ -o LinkedEditor driver.o LinkedList.o node.o
+
+driver.o: driver.cpp LinkedList.h node.h
+	g++ -c driver.cpp
+
+LinkedList.o: LinkedList.cpp LinkedList.h
+	g++ -c LinkedList.cpp
+
+node.o: node.cpp node.h
+	g++ -c node.cpp
+
+clean:
+	rm *.o
